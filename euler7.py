@@ -6,11 +6,11 @@ def isprime(n):
     for m in range(2, n):
         if n % m == 0:
             return false
-        return True
+    return True
 
 def getnthprime(num):
-n = 1, factors = [], num = (10e3)+1
-    while factors.len <= num:
+    n = 1, factors = [], num = (10e3)+1
+    while len(factors) <= num:
         n + 1
         if isprime:
             factors.append(n)
