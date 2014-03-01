@@ -2,18 +2,23 @@
 
 What is the 10 001st prime number?'''
 
-def isprime(n):
-    for m in range(2, n):
-        if n % m == 0:
-            return false
-    return True
+#def isprime(n, smallerprimes):
+#    for m in smallerprimes:
+#        if n % m == 0:
+#            return False
+#    return True
 
-def getnthprime(num):
-    n = 1, factors = [], num = (10e3)+1
-    while len(factors) <= num:
-        n + 1
-        if isprime:
-            factors.append(n)
-    return factors[-1]
+def getprimes(count):
+    n = 2
+    primes = []
+    while len(primes) < count:
+        if all(n % p > 0 for p in primes):
+            primes.append(n)
+        n += 1
+    return primes
+
+def getnthprime(count):
+    return getprimes(count)[-1]
     
-print getnthprime(10001) 
+print getprimes(10001)[-1]
+
