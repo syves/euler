@@ -1,5 +1,6 @@
-'''In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
+import operator
 
+raw = '''
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -20,6 +21,46 @@
 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
-The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
+'''
 
-What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
+big_grid = [map(int, line.split(' ')) for line in raw.strip().split('\n')]
+'''
+The product of these numbers is 26 * 63 * 78 * 14 = 1788696
+What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20*20 grid?
+'''
+
+def get_chunks_horizontal(big_grid):
+a = range(0, 10)
+[a[idx:idx + 4] for idx, num in enumerate(a) if idx + 4 <= len(a)]
+    
+print get_chunks_horizontal
+    
+
+
+#time started :   11:20 -11:43, 942-10;10 , #time ended
+'''
+def get_chunks_horizontal(big_grid):
+    largest_product_chunk = [[]]
+    chunk_product = reduce(operator.__mul__,big_grid.slice(n, m))
+    n = big_grid[0]
+    m = big_grid[4]
+    for arrays in big_grid:
+        print "in big grid"
+        #while n >= array[-5] and m >= array[-1]:
+        for nums in array:
+                print "in arrays"
+                chunk_product
+                if chunk_product > largest_product_chunk:
+                    print "in if chunk"
+                    largest_product_chunk = chunk_product
+                    n += 1 
+                    m += 1
+                print largest_product_chunk
+                
+get_chunks_horizontal(big_grid)
+'''
+
+    
+    
+    
+    
