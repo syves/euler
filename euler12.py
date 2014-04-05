@@ -28,9 +28,11 @@ def get_num_factors(num):
     for n in range(1, int(num ** 0.5) + 1):
         if num % n == 0:
             num_factors += 2
-    if (int(num ** 0.5)**2) == num:
+
+    if int(num ** 0.5) ** 2 == num:
         return num_factors + 1
-    return num_factors
+    else:
+        return num_factors
             
 #print get_factors(28)  
 
