@@ -11,16 +11,15 @@ var isPrime = function(number){
   return true;
 }
 
-console.log(isPrime(5))
-console.log(isPrime(6))
-
-  var sumPrimes = function(stop){
-    var sum = 0;
-    for (var m = 2; m <= stop; m++){
-      if (isPrime(m)){
-        sum += m;
+var sumPrimes = function(stop){
+  var sum = 0;
+  for (var m = 2; m <= stop; m++){
+    if (isPrime(m)){
+      sum += m;
       }
     }
     return sum
   }
-console.log(sumPrimes(1000000))
+console.log(sumPrimes(2000))
+
+//30 min. initial solution dec.8th
