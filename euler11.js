@@ -34,11 +34,11 @@ bigGrid = '\
 // I'm not sure how indexing will work, for me here.
 //
 var findGreat = function(sliceNum){
-  var greatest = 0;
+  var grid = bigGrid.split(' ').map(Number);
+  var greatest = 0, verticleProduct = 1, verticles = [grid[0]], diagonalProduct = grid[0];
   //create one array, with 400 elements, each element is a string
 
 //TODO! chnage numbers '04' to 4, from two digit to single and from string to int.
-  var grid = bigGrid.split(' ').map(Number)
   //while in the big loop
   for (var n = 0; n <= bigGrid.length - sliceNum; n+=1){
     //get slice nums and multiply them
@@ -47,8 +47,22 @@ var findGreat = function(sliceNum){
     if (grid.slice(n, n+sliceNum).reduce(function(a,b){return a*b;}, 1)> greatest){
       greatest = grid.slice(n, n+sliceNum).reduce(function(a,b){return a*b;},1)
     }
+    //
+    //else if (...> greatest){
+    //greatest = 
+    while (var count = 0 <= sliceNum){
+      verticles.push(grid[n+20])
+      count +=1;
+    {
+
+
+
+    //console.log(verticleProduct * (grid[n? +20]))
+    //}
   }
-  return greatest;
+  console.log(verticles)
+  //return greatest;
 }
 
 console.log(findGreat(4));
+
