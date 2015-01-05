@@ -33,36 +33,44 @@ bigGrid = '\
 // Is there a space difference between creating an array and a string,
 // I'm not sure how indexing will work, for me here.
 //
-var findGreat = function(sliceNum){
+var findGreat = function(sliceNum,fn){
   var grid = bigGrid.split(' ').map(Number);
-  var greatest = 0, verticleProduct = 1, verticles = [grid[0]], diagonalProduct = grid[0];
-  //create one array, with 400 elements, each element is a string
 
-//TODO! chnage numbers '04' to 4, from two digit to single and from string to int.
-  //while in the big loop
-  for (var n = 0; n <= bigGrid.length - sliceNum; n+=1){
-    //get slice nums and multiply them
-    //
-    //from index zero right
-    if (grid.slice(n, n+sliceNum).reduce(function(a,b){return a*b;}, 1)> greatest){
-      greatest = grid.slice(n, n+sliceNum).reduce(function(a,b){return a*b;},1)
-    }
-    //
-    //else if (...> greatest){
-    //greatest = 
-    while (var count = 0 <= sliceNum){
-      verticles.push(grid[n+20])
-      count +=1;
-    {
+  return grid.map(function(n, idx) {
+    return fn(idx, grid, sliceNum);
+  });
+};
 
-
-
-    //console.log(verticleProduct * (grid[n? +20]))
-    //}
+var rightDiagonalGroup = function(idx, grid, sliceNum) {
+  var group = [];
+  for (; group.length < sliceNum; idx += 21) {
+    group.push(grid[idx]);
   }
-  console.log(verticles)
-  //return greatest;
-}
+  return group;
+};
 
-console.log(findGreat(4));
 
+var leftDiangalGroup = function(idx, grid, sliceNum) {
+  var group = [];
+  for (; group.length < sliceNum; idx += 20) {
+    group.push(grid[idx]);
+  }
+  return group;
+};
+
+
+var verticalGroup = function(idx, grid, sliceNum) {
+  var group = [];
+  for (; group.length < sliceNum; idx += 20) {
+    group.push(grid[idx]);
+  }
+  return group;
+};
+
+
+
+var horizontalGroup = function(idx, grid, sliceNum) {
+  return grid.slice(idx, idx+sliceNum)
+};
+
+console.log(findGreat(4, horizontalGroup));
