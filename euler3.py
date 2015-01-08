@@ -14,8 +14,7 @@ def factorize(n):
     ceil_sqrt_n = math.ceil(math.sqrt(n))
     factors = []
     for x in range(2, int(ceil_sqrt_n)):
-        if ( n % x == 0):
-            #largeFactor = n / x
+        if n % x == 0:
             factors.append(x)
             factors.append(n/x)
     return factors

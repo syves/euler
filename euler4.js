@@ -12,8 +12,8 @@ var isPal = function(str) {
 
 var largestPalindrome = function(numDigits) {
 //raised to pow -1 ?
-  var min = Math.pow(10, numDigits - 1);
-  var max = Math.pow(10, numDigits);
+  var min = Math.pow(10, numDigits - 1); //100
+  var max = Math.pow(10, numDigits); //1000
   var results = [];
   for (var i = min; i < max; i += 1) {
     for (var j = i; j < max; j += 1) {
