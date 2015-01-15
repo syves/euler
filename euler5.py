@@ -9,7 +9,6 @@ def factorize(num):
         if num % n == 0:
             return [n] + factorize(num / n)
     return [num]
-    
 
 def get_counts(list_):
     counts = {}
@@ -20,7 +19,6 @@ def get_counts(list_):
             counts[item] = 1
     return counts
 
-
 def smallest_product(min_, max_):
     all_counts = {n: get_counts(factorize(n)) for n in range(min_, max_ + 1)}
     product = 1
@@ -29,7 +27,6 @@ def smallest_product(min_, max_):
         if count > 0:
             product *= n ** count
     return product
-
 
 print(smallest_product(1, 20))
 
